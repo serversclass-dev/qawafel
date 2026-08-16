@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>شركة قوافل الخير المتميزة لاستيراد الحبوب</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #ffffff;
+      --bg-soft:   #f7f9f7;
+      --bg-green:  #f0f5ef;
+      --dark:      #152912;
+      --primary:   #2a5424;
+      --primary-lt:#3a7232;
+      --accent:    #c49a2e;
+      --accent-lt: #e8c96a;
+      --muted:     #5a6e56;
+      --border:    #d8e2d6;
+      --white:     #ffffff;
+      --font-h:    'Tajawal', sans-serif;
+      --font-b:    'Cairo', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--dark);
+      font-family: var(--font-b);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f0f5ef; }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+    /* ══════════════════════════════
+       NAVBAR
+    ══════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; right: 0; left: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      height: 88px;
+      border-bottom: 2px solid var(--border);
+      box-shadow: 0 2px 24px rgba(42,84,36,0.07);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      text-decoration: none;
+    }
+
+    .nav-logo-img-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--bg-green);
+      border: 2.5px solid rgba(196,154,46,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      flex-shrink: 0;
+      box-shadow: 0 0 18px rgba(196,154,46,0.18);
+      transition: box-shadow 0.3s, border-color 0.3s;
+    }
+
+    .nav-logo:hover .nav-logo-img-wrap {
+      border-color: var(--accent);
+      box-shadow: 0 0 28px rgba(196,154,46,0.38);
+    }
+
+    .nav-logo-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .nav-brand { display: flex; flex-direction: column; gap: 3px; }
+
+    .nav-brand-main {
+      font-family: var(--font-h);
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .nav-brand-sub {
+      font-family: var(--font-b);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: var(--font-b);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: color 0.25s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* ══════════════════════════════
+       HERO — light BG with big logo
+    ══════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    /* Soft green radial glow in background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 70% at 50% 40%, rgba(42,84,36,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 80%, rgba(196,154,46,0.06) 0%, transparent 60%);
+      z-index: 0;
+    }
+
+    /* Subtle wheat/grain background image at very low opacity */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1600&q=60') center/cover no-repeat;
+      opacity: 0.06;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 140px 48px 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* ─── GIANT LOGO ─── */
+    .hero-logo-wrap {
+      position: relative;
+      margin-bottom: 44px;
+    }
+
+    /* Outer decorative glow ring */
+    .hero-logo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -24px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,154,46,0.12) 0%, transparent 65%);
+      z-index: 0;
+    }
+
+    /* Spinning dashed ring */
+    .hero-logo-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -10px;
+      border-radius: 50%;
+      border: 2px dashed rgba(196,154,46,0.4);
+      animation: spin-slow 28s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .hero-logo-circle {
+      position: relative;
+      z-index: 1;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid rgba(196,154,46,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      box-shadow:
+        0 0 0 10px rgba(196,154,46,0.07),
+        0 12px 56px rgba(42,84,36,0.13),
+        0 4px 16px rgba(196,154,46,0.18);
+    }
+
+    .hero-logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: -6px;
+      left: -28px;
+      background: var(--accent);
+      color: var(--dark);
+      font-family: var(--font-h);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      padding: 6px 14px;
+      border-radius: 2px;
+      transform: rotate(-4deg);
+      z-index: 3;
+      white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(196,154,46,0.35);
+    }
+
+    .hero-company-name {
+      font-family: var(--font-h);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.18;
+      margin-bottom: 12px;
+    }
+
+    .hero-company-name em {
+      font-style: normal;
+      color: var(--primary);
+      display: block;
+    }
+
+    /* Gold divider */
+    .hero-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 24px 0;
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .hero-divider::before,
+    .hero-divider::after {
+      content: '';
+      flex: 1;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, var(--accent));
+    }
+
+    .hero-divider::after {
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+
+    .hero-divider-dot { color: var(--accent); font-size: 1.2rem; }
+
+    .hero-sub {
+      font-family: var(--font-b);
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 580px;
+      margin-bottom: 48px;
+      line-height: 2;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: var(--white);
+      font-family: var(--font-h);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      padding: 16px 48px;
+      border-radius: 4px;
+      text-decoration: none;
+      position: relative;
+      transition: transform 0.2s, background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 4px -4px -4px 4px;
+      border: 2px solid var(--primary);
+      border-radius: 4px;
+      transition: inset 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-lt);
+      transform: translate(-2px, -2px);
+    }
+
+    .btn-primary:hover::after { inset: 6px -6px -6px 6px; }
+
+    .btn-accent {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: var(--dark);
+      font-family: var(--font-h);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      padding: 16px 44px;
+      border-radius: 4px;
+      text-decoration: none;
+      position: relative;
+      transition: transform 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-accent::after {
+      content: '';
+      position: absolute;
+      inset: 4px -4px -4px 4px;
+      border: 2px solid var(--accent);
+      border-radius: 4px;
+      transition: inset 0.2s;
+    }
+
+    .btn-accent:hover { transform: translate(-2px, -2px); }
+    .btn-accent:hover::after { inset: 6px -6px -6px 6px; }
+
+    /* Phone strip */
+    .hero-phones {
+      display: flex;
+      gap: 36px;
+      margin-top: 56px;
+      padding-top: 36px;
+      border-top: 1.5px solid var(--border);
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-phone-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.97rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-family: var(--font-b);
+    }
+
+    .hero-phone-item svg { color: var(--accent); }
+    .hero-phone-item:hover { color: var(--primary); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--border);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      font-family: var(--font-h);
+      animation: bounce 2.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ══════════════════════════════
+       TRUST BAR
+    ══════════════════════════════ */
+    .trust-bar {
+      background: var(--primary);
+      padding: 0;
+    }
+
+    .trust-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 60px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .trust-item {
+      padding: 32px 28px;
+      border-left: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .trust-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(196,154,46,0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-lt);
+      flex-shrink: 0;
+    }
+
+    .trust-text strong {
+      display: block;
+      font-family: var(--font-h);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .trust-text span {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ══════════════════════════════
+       SHARED SECTION
+    ══════════════════════════════ */
+    .section-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 104px 60px;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-h);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-tag::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 2px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: var(--font-h);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-title em {
+      font-style: normal;
+      color: var(--primary);
+    }
+
+    .wavy-divider {
+      display: block;
+      width: 140px;
+      margin-bottom: 44px;
+      overflow: visible;
+    }
+
+    /* ══════════════════════════════
+       ABOUT
+    ══════════════════════════════ */
+    .about-bg { background: var(--white); }
+
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-img {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .about-img::before {
+      content: '';
+      position: absolute;
+      inset: -14px 14px 14px -14px;
+      border: 2.5px solid var(--border);
+      border-radius: 8px;
+      z-index: -1;
+    }
+
+    .about-img::after {
+      content: 'منذ 2020';
+      position: absolute;
+      bottom: 24px;
+      left: -18px;
+      background: var(--accent);
+      color: var(--dark);
+      font-family: var(--font-h);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      padding: 10px 20px;
+      transform: rotate(-3deg);
+      border-radius: 3px;
+      box-shadow: 0 4px 16px rgba(196,154,46,0.3);
+    }
+
+    .about-text p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 2px solid var(--border);
+    }
+
+    .stat-item { display: flex; flex-direction: column; gap: 5px; }
+
+    .stat-num {
+      font-family: var(--font-h);
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .stat-num span { color: var(--accent); }
+    .stat-label { font-size: 0.9rem; color: var(--muted); font-weight: 600; }
+
+    /* ══════════════════════════════
+       SERVICES
+    ══════════════════════════════ */
+    .services-full { background: var(--bg-soft); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 44px 36px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 56px; height: 4px;
+      background: var(--accent);
+      border-radius: 0 10px 0 4px;
+      transition: width 0.35s ease;
+    }
+
+    .service-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(42,84,36,0.1);
+    }
+
+    .service-card:hover::before { width: 100%; border-radius: 0 10px 0 0; }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 28px;
+      color: var(--primary);
+      background: var(--bg-green);
+      padding: 12px;
+      border-radius: 10px;
+    }
+
+    .service-title {
+      font-family: var(--font-h);
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 14px;
+    }
+
+    .service-desc {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.95;
+    }
+
+    /* ══════════════════════════════
+       WHY US
+    ══════════════════════════════ */
+    .why-full { background: var(--white); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+
+    .why-item {
+      background: var(--bg-green);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+    }
+
+    .why-item:hover {
+      background: var(--white);
+      box-shadow: 0 10px 36px rgba(42,84,36,0.1);
+      transform: translateY(-4px);
+    }
+
+    .why-num {
+      font-family: var(--font-h);
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .why-num span { color: var(--accent); }
+    .why-label { font-size: 0.97rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .why-desc  { font-size: 0.83rem; color: var(--muted); line-height: 1.85; }
+
+    /* ══════════════════════════════
+       CONTACT
+    ══════════════════════════════ */
+    .contact-full {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      margin-top: 60px;
+    }
+
+    .contact-info-block { display: flex; flex-direction: column; gap: 36px; }
+
+    .contact-item { display: flex; align-items: flex-start; gap: 20px; }
+
+    .contact-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent-lt);
+      box-shadow: 0 4px 14px rgba(42,84,36,0.18);
+    }
+
+    .contact-detail strong {
+      display: block;
+      font-family: var(--font-h);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .contact-detail p,
+    .contact-detail a {
+      font-size: 1rem;
+      color: var(--dark);
+      text-decoration: none;
+      line-height: 1.75;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .contact-detail a:hover { color: var(--primary); }
+
+    /* Form */
+    .contact-form { display: flex; flex-direction: column; gap: 32px; }
+
+    .form-field { display: flex; flex-direction: column; gap: 8px; }
+
+    .form-field label {
+      font-family: var(--font-h);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .form-field input,
+    .form-field textarea {
+      background: var(--white);
+      border: none;
+      border-bottom: 2px solid var(--border);
+      padding: 12px 0;
+      font-family: var(--font-b);
+      font-size: 1rem;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.25s;
+      resize: none;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: #bcc9b9; }
+
+    .form-field input:focus,
+    .form-field textarea:focus { border-bottom-color: var(--primary); }
+
+    .form-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: var(--white);
+      font-family: var(--font-h);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 16px 48px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s, background 0.2s;
+      align-self: flex-start;
+    }
+
+    .form-submit::after {
+      content: '';
+      position: absolute;
+      inset: 4px -4px -4px 4px;
+      border: 2px solid var(--primary);
+      border-radius: 4px;
+      transition: inset 0.2s;
+    }
+
+    .form-submit:hover { transform: translate(-2px,-2px); background: var(--primary-lt); }
+    .form-submit:hover::after { inset: 6px -6px -6px 6px; }
+
+    /* ══════════════════════════════
+       MAP
+    ══════════════════════════════ */
+    .map-section { background: var(--bg-green); border-top: 1px solid var(--border); }
+
+    .map-section iframe {
+      width: 100%;
+      height: 420px;
+      border: none;
+      border-radius: 10px;
+      display: block;
+      box-shadow: 0 4px 24px rgba(42,84,36,0.1);
+    }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    footer {
+      background: var(--dark);
+      border-top: 3px solid var(--accent);
+      padding: 56px 60px 36px;
+    }
+
+    .footer-top {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-logo { display: flex; align-items: center; gap: 20px; }
+
+    .footer-logo-img-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      border: 2.5px solid rgba(196,154,46,0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      flex-shrink: 0;
+      box-shadow: 0 0 24px rgba(196,154,46,0.15);
+    }
+
+    .footer-logo-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .footer-brand-main {
+      font-family: var(--font-h);
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.4;
+    }
+
+    .footer-brand-sub {
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+      display: block;
+    }
+
+    .footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-family: var(--font-b);
+      font-weight: 500;
+    }
+
+    .footer-links a:hover { color: var(--accent-lt); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 28px;
+      text-align: center;
+    }
+
+    .footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.2); }
+
+    /* ══════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════ */
+    @media (max-width: 1024px) {
+      nav { padding: 0 28px; }
+      .nav-links { display: none; }
+      .section-wrap { padding: 80px 28px; }
+      .trust-bar-inner { grid-template-columns: 1fr 1fr; padding: 0 28px; }
+      footer { padding: 44px 28px 28px; }
+    }
+
+    @media (max-width: 768px) {
+      .about-wrap { grid-template-columns: 1fr; gap: 52px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 52px; }
+      .trust-bar-inner { grid-template-columns: 1fr 1fr; }
+      .footer-top { flex-direction: column; text-align: center; }
+      .footer-logo { justify-content: center; }
+      .footer-links { justify-content: center; }
+    }
+
+    @media (max-width: 560px) {
+      .hero-content { padding: 110px 24px 80px; }
+      .hero-logo-circle { width: 160px; height: 160px; }
+      .hero-company-name { font-size: 1.9rem; }
+      .hero-phones { flex-direction: column; gap: 16px; align-items: center; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .why-grid { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .trust-bar-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav>
+    <a href="#home" class="nav-logo">
+      <div class="nav-logo-img-wrap">
+        <img src="logo.png" alt="شعار شركة قوافل الخير"/>
+      </div>
+      <div class="nav-brand">
+        <span class="nav-brand-main">شركة قوافل الخير المتميزة</span>
+        <span class="nav-brand-sub">لاستيراد الحبوب — زليتن، ليبيا</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">من نحن</a></li>
+      <li><a href="#services">خدماتنا</a></li>
+      <li><a href="#why">مميزاتنا</a></li>
+      <li><a href="#contact">تواصل معنا</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <div class="hero" id="home">
+    <div class="hero-content">
+
+      <!-- GIANT LOGO -->
+      <div class="hero-logo-wrap">
+        <div class="hero-logo-circle">
+          <img src="logo.png" alt="شعار شركة قوافل الخير المتميزة لاستيراد الحبوب"/>
+        </div>
+        <div class="hero-badge">✦ موثوق · متميز</div>
+      </div>
+
+      <h1 class="hero-company-name">
+        شركة قوافل الخير المتميزة
+        <em>لاستيراد الحبوب</em>
+      </h1>
+
+      <div class="hero-divider">
+        <span class="hero-divider-dot">✦</span>
+      </div>
+
+      <p class="hero-sub">
+        نستورد أجود أنواع الحبوب والبذور من أفضل المصادر العالمية،
+        لنوصلها إليكم بأعلى معايير الجودة والأمان الغذائي —
+        من قلب زليتن إلى كل ليبيا.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          تواصل معنا الآن
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 5 5 12 12 19"/></svg>
+        </a>
+        <a href="#about" class="btn-accent">اعرف المزيد عنا</a>
+      </div>
+
+      <div class="hero-phones">
+        <a href="tel:0912103189" class="hero-phone-item">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0912103189
+        </a>
+        <a href="tel:0912103199" class="hero-phone-item">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0912103199
+        </a>
+        <a href="mailto:info@example.com" class="hero-phone-item">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@example.com
+        </a>
+      </div>
+
+    </div>
+
+    <div class="hero-scroll">
+      <span>تمرير للأسفل</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
+
+  <!-- ══ TRUST BAR ══ -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="trust-text">
+          <strong>جودة مضمونة</strong>
+          <span>فحص دولي لكل شحنة</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="trust-text">
+          <strong>شحن موثوق</strong>
+          <span>من المنشأ حتى بابكم</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="trust-text">
+          <strong>دعم ٢٤/٧</strong>
+          <span>فريق جاهز دائماً</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="trust-text">
+          <strong>أسعار تنافسية</strong>
+          <span>أفضل قيمة في السوق</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ABOUT ══ -->
+  <div class="about-bg" id="about">
+    <div class="section-wrap">
+      <div class="about-wrap">
+        <div class="about-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="حبوب"/>
+        </div>
+        <div class="about-text">
+          <span class="section-tag">من نحن</span>
+          <h2 class="section-title">شركة رائدة في<br/><em>استيراد الحبوب</em></h2>
+          <svg class="wavy-divider" viewBox="0 0 140 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 6 Q18 1 34 6 Q50 11 66 6 Q82 1 98 6 Q114 11 130 6 Q136 2 138 5"
+                  stroke="#c49a2e" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <p>
+            شركة قوافل الخير المتميزة لاستيراد الحبوب هي شركة ليبية متخصصة في
+            استيراد وتوزيع أجود أنواع الحبوب والبذور الزراعية، تعمل بكل مهنية
+            وشفافية لخدمة السوق المحلية والمزارعين.
+          </p>
+          <p>
+            نعتمد على شبكة واسعة من الموردين العالميين الموثوقين، ونلتزم بأعلى
+            معايير السلامة الغذائية في جميع مراحل الاستيراد والتخزين والتوزيع،
+            لضمان وصول أفضل المنتجات إلى عملائنا الكرام.
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-num">٥<span>+</span></div>
+              <div class="stat-label">سنوات من الخبرة</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">١٠<span>+</span></div>
+              <div class="stat-label">دول مورِّدة</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">٥٠<span>+</span></div>
+              <div class="stat-label">عميل موثوق</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">١٠٠<span>%</span></div>
+              <div class="stat-label">التزام بالجودة</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SERVICES ══ -->
+  <div class="services-full" id="services">
+    <div class="section-wrap">
+      <span class="section-tag">خدماتنا</span>
+      <h2 class="section-title">ماذا <em>نقدم لكم</em></h2>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <div class="service-title">استيراد الحبوب</div>
+          <div class="service-desc">نستورد أجود أنواع الحبوب — قمح، شعير، ذرة، وبذور زراعية — من أكبر المزارع والموردين العالميين المعتمدين.</div>
+        </div>
+
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <div class="service-title">الشحن والتوزيع</div>
+          <div class="service-desc">نضمن سلامة البضاعة من المنشأ حتى وصولها إلى مستودعاتكم عبر شبكة شحن بحري وبري موثوقة.</div>
+        </div>
+
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <div class="service-title">ضمان الجودة</div>
+          <div class="service-desc">تخضع جميع منتجاتنا لفحوصات دقيقة قبل الاستيراد وبعد وصولها وفق أعلى معايير الجودة والسلامة الغذائية.</div>
+        </div>
+
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          <div class="service-title">التخزين الآمن</div>
+          <div class="service-desc">نوفر حلول تخزين آمنة ومناسبة للحبوب وفق أحدث التقنيات للحفاظ على جودتها ومنع أي تلف.</div>
+        </div>
+
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <div class="service-title">التسعير التنافسي</div>
+          <div class="service-desc">نقدم أسعاراً تنافسية مع الحفاظ على أعلى مستويات الجودة، مما يجعلنا الخيار الأفضل للمزارعين والتجار.</div>
+        </div>
+
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div class="service-title">خدمة العملاء</div>
+          <div class="service-desc">فريق متخصص جاهز للإجابة على جميع استفساراتكم وتقديم المشورة الفنية والتجارية على مدار الأسبوع.</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ WHY US ══ -->
+  <div class="why-full" id="why">
+    <div class="section-wrap">
+      <span class="section-tag">مميزاتنا</span>
+      <h2 class="section-title">لماذا تختار <em>قوافل الخير</em>؟</h2>
+      <svg class="wavy-divider" viewBox="0 0 140 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 6 Q18 1 34 6 Q50 11 66 6 Q82 1 98 6 Q114 11 130 6 Q136 2 138 5"
+              stroke="#c49a2e" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-num">٥<span>+</span></div>
+          <div class="why-label">سنوات خبرة</div>
+          <div class="why-desc">خبرة واسعة في مجال استيراد وتوزيع الحبوب في السوق الليبية</div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">١٠٠<span>%</span></div>
+          <div class="why-label">جودة مضمونة</div>
+          <div class="why-desc">فحص شامل لجميع المنتجات وفق أعلى المعايير الدولية</div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">٢٤<span>/٧</span></div>
+          <div class="why-label">دعم مستمر</div>
+          <div class="why-desc">فريق دعم متاح على مدار الساعة لخدمة جميع احتياجاتكم</div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">١٠<span>+</span></div>
+          <div class="why-label">دول مصدرة</div>
+          <div class="why-desc">شبكة موردين دولية تضمن أفضل الأسعار وأعلى جودة ممكنة</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CONTACT ══ -->
+  <div class="contact-full" id="contact">
+    <div class="section-wrap">
+      <span class="section-tag">تواصل معنا</span>
+      <h2 class="section-title">نحن هنا <em>لخدمتكم</em></h2>
+      <div class="contact-grid">
+
+        <div class="contact-info-block">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-detail">
+              <strong>هاتف</strong>
+              <a href="tel:0912103189">0912103189</a>
+              <a href="tel:0912103199" style="display:block">0912103199</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-detail">
+              <strong>البريد الإلكتروني</strong>
+              <a href="mailto:info@example.com">info@example.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-detail">
+              <strong>العنوان</strong>
+              <p>دير العنوان مقابل مبنى هيئة الرقابة الإدارية<br/>وديوان المحاسبة — زليتن، ليبيا</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-field">
+            <label>الاسم الكامل</label>
+            <input type="text" placeholder="أدخل اسمك الكامل"/>
+          </div>
+          <div class="form-field">
+            <label>رقم الهاتف</label>
+            <input type="tel" placeholder="09XXXXXXXX"/>
+          </div>
+          <div class="form-field">
+            <label>البريد الإلكتروني</label>
+            <input type="email" placeholder="example@domain.com"/>
+          </div>
+          <div class="form-field">
+            <label>رسالتك</label>
+            <textarea rows="4" placeholder="اكتب استفسارك هنا..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">
+            إرسال الرسالة
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ MAP ══ -->
+  <div class="map-section">
+    <div class="section-wrap" style="padding-top: 80px; padding-bottom: 80px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3366.04059307917!2d14.569647000000003!3d32.47160600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDI4JzE3LjgiTiAxNMKwMzQnMTAuNyJF!5e0!3m2!1sar!2sly!4v1786892379298!5m2!1sar!2sly"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        title="موقع شركة قوافل الخير">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-logo">
+        <div class="footer-logo-img-wrap">
+          <img src="logo.png" alt="شعار شركة قوافل الخير"/>
+        </div>
+        <div>
+          <div class="footer-brand-main">شركة قوافل الخير المتميزة</div>
+          <span class="footer-brand-sub">لاستيراد الحبوب — زليتن، ليبيا</span>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">من نحن</a>
+        <a href="#services">خدماتنا</a>
+        <a href="#why">مميزاتنا</a>
+        <a href="#contact">تواصل معنا</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 جميع الحقوق محفوظة — شركة قوافل الخير المتميزة لاستيراد الحبوب</p>
+    </div>
+  </footer>
+
+</body>
+</html>
